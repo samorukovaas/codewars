@@ -14,5 +14,8 @@
 
 // Tip: Some languages have a way to make arguments optional.
 
-const closeCompare = (a, b, margin = 0) =>
-  a < b - margin ? -1 : a - margin > b ? 1 : 0;
+const closeCompare = (a, b, margin = 0) => {
+  if (a < b - margin) return -1;
+  else if (a - margin > b) return 1;
+  else return 0;
+};

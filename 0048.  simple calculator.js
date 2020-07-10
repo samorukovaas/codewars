@@ -11,18 +11,15 @@
 // calculator(1,2,"&"); //=> result will be "unknown value"
 // calculator(1,"k","*"); //=> result will be "unknown value"
 
-const calculator = (a, b, sign) =>
-  typeof a !== "number" || typeof b !== "number"
-    ? "unknown value"
-    : (sign !== "+") & (sign !== "-") & (sign !== "*") & (sign !== "/")
-    ? "unknown value"
-    : sign === "+"
-    ? a + b
-    : sign === "-"
-    ? a - b
-    : sign === "*"
-    ? a * b
-    : a / b;
+const calculator = (a, b, sign) => {
+  if (typeof a !== "number" || typeof b !== "number") return "unknown value";
+  else if ((sign !== "+") & (sign !== "-") & (sign !== "*") & (sign !== "/"))
+    return "unknown value";
+  else if (sign === "+") return a + b;
+  else if (sign === "-") return a - b;
+  else if (sign === "*") return a * b;
+  else return a / b;
+};
 
 // function calculator(a, b, sign) {
 //   if (typeof a == "number" && typeof b == "number") {
